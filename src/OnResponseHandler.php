@@ -4,7 +4,7 @@ namespace VojtechDobes\NetteAjax;
 
 use Nette\Application\Responses\ForwardResponse;
 use Nette\Application\Responses\JsonResponse;
-use Nette\Application\IRouter;
+use Nette\Routing\Router;
 use Nette\Http;
 use Nette\Reflection\Property;
 
@@ -25,7 +25,7 @@ class OnResponseHandler
 	/** @var Http\IRequest */
 	private $httpRequest;
 
-	/** @var IRouter */
+	/** @var Router */
 	private $router;
 
 	/** @var bool */
@@ -40,7 +40,7 @@ class OnResponseHandler
 	 * @param  Http\IRequest
 	 * @param  IRouter
 	 */
-	public function __construct(Http\IRequest $httpRequest, IRouter $router)
+	public function __construct(Http\IRequest $httpRequest, Router $router)
 	{
 		$this->httpRequest = $httpRequest;
 		$this->router = $router;
